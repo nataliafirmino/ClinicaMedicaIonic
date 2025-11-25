@@ -1,0 +1,180 @@
+/* ================= FUNDO GERAL ================= */
+.home-content {
+  --background: #f2f4f8;
+}
+
+/* ================= HEADER ================= */
+.home-header {
+  ion-toolbar {
+    --background: linear-gradient(180deg, #1e73ff 0%, #1a5fe0 100%);
+    --color: #fff;
+    --min-height: 84px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-badge {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+  }
+
+  .clinic-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: #fff;
+    padding: 3px;
+  }
+
+  .txt {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+
+    .app-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .app-sub {
+      font-size: 0.8rem;
+      opacity: 0.95;
+      margin-top: 2px;
+    }
+  }
+}
+
+/* ================= TOPO AZUL (SAUDAÇÃO) ================= */
+.top-area {
+  background: linear-gradient(180deg, #1e73ff 0%, #1a5fe0 100%);
+  padding: 20px 15px 80px; /* altura do azul */
+  color: #fff;
+  border-bottom-left-radius: 26px;
+  border-bottom-right-radius: 26px;
+  position: relative;
+  z-index: 1;
+
+  .greet {
+    margin: 0 0 6px 0;
+    opacity: 0.95;
+    font-size: 1rem;
+  }
+
+  .name {
+    margin: 0 0 6px 0;
+    font-size: 1.55rem;
+    font-weight: 800;
+  }
+
+  .help {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+}
+
+/* ================= CARDS DE AÇÕES ================= */
+.quick-actions {
+  margin-top: 0;
+  transform: translateY(30px); /* sobe os cards (ajuste fino) */
+  position: relative;
+  z-index: 10; /* garante clique */
+  padding: 0 16px 24px;
+
+  .actions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .action-item {
+    background: #fff;
+    border: none;
+    border-radius: 18px;
+    padding: 18px 14px;
+    min-height: 128px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    box-shadow:
+      0 10px 22px rgba(16, 24, 40, 0.08),
+      0 2px 6px rgba(16, 24, 40, 0.04);
+
+    cursor: pointer;
+    transition: transform .12s ease;
+
+    span {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1f2937;
+      text-align: center;
+      letter-spacing: 0.2px;
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+
+      ion-icon {
+        font-size: 26px;
+        color: #fff;
+      }
+
+      &.blue   { background: linear-gradient(135deg, #2f7cff, #1b63e8); }
+      &.green  { background: linear-gradient(135deg, #20c997, #12a87b); }
+      &.purple { background: linear-gradient(135deg, #7d4cff, #6232e6); }
+      &.orange { background: linear-gradient(135deg, #ff9800, #f57c00); }
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+/* ================= TELAS PEQUENAS ================= */
+@media (max-width: 360px) {
+  .quick-actions {
+    transform: translateY(-30px);
+
+    .actions-grid {
+      gap: 12px;
+    }
+
+    .action-item {
+      min-height: 118px;
+      padding: 16px 12px;
+
+      .icon {
+        width: 52px;
+        height: 52px;
+
+        ion-icon {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

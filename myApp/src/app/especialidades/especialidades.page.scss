@@ -1,0 +1,161 @@
+/* FUNDO GERAL */
+.spec-content {
+  --background: #f4f6fb;
+}
+
+/* HEADER azul (menos arredondado e mais elegante) */
+.spec-header {
+  ion-toolbar {
+    --background: #1e73ff;
+    --color: #ffffff;
+    --min-height: 68px;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    /* antes tava muito redondo */
+    // border-bottom-left-radius: 8px;
+    // border-bottom-right-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  }
+
+  ion-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-left: 8px;
+  }
+
+  .header-actions ion-icon {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+}
+
+/* FAIXA VERDE (mais espaço interno) */
+.hero {
+  background: #11b86a;
+  padding: 18px 18px 16px; /* mais respiro lateral e embaixo */
+  color: #fff;
+
+  h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 8px 0 6px;
+  }
+
+  p {
+    font-size: 0.9rem;
+    opacity: 0.95;
+    margin: 0 0 14px; /* mais espaço antes da busca */
+  }
+
+  .search-wrap {
+    margin-top: 6px;
+  }
+
+  .hero-search {
+    --background: #ffffff;
+    --color: #222;
+    --placeholder-color: #9aa0a6;
+    --border-radius: 10px;
+    --box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    padding: 0;
+  }
+}
+
+/* CORPO */
+.page-body {
+  padding: 18px 16px 24px; /* mais afastado das bordas */
+}
+
+.section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #6b7280;
+  margin: 8px 6px 14px; /* mais distante dos cards */
+}
+
+/* LISTA */
+.spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px; /* mais espaço entre os cards */
+}
+
+/* CARD */
+.spec-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #eef0f4;
+
+  /* antes tava apertado */
+  padding: 14px 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.07);
+
+  &:active {
+    transform: scale(0.985);
+  }
+}
+
+/* CÍRCULO DO ÍCONE */
+.icon-badge {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  ion-icon {
+    font-size: 1.4rem;
+  }
+}
+
+/* TEXTO DO CARD */
+.spec-text {
+  h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 6px; /* mais espaço do título pra descrição */
+  }
+
+  p {
+    font-size: 0.87rem;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.3rem;
+  }
+}
+
+/* CORES por especialidade */
+.icon-badge.cardiologia {
+  background: #fdecec;
+  ion-icon { color: #ef4444; }
+}
+
+.icon-badge.neurologia {
+  background: #f1ebff;
+  ion-icon { color: #8b5cf6; }
+}
+
+.icon-badge.oftalmologia {
+  background: #eaf2ff;
+  ion-icon { color: #3b82f6; }
+}
+
+.icon-badge.ortopedia {
+  background: #f0f1f3;
+  ion-icon { color: #6b7280; }
+}
+
+.icon-badge.pediatria {
+  background: #fde8f3;
+  ion-icon { color: #ec4899; }
+}

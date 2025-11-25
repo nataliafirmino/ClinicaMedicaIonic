@@ -1,0 +1,64 @@
+<ion-header class="home-header" translucent="true">
+  <ion-toolbar>
+    <ion-title>
+      <div class="brand">
+        <div class="logo-badge">
+          <img src="assets/img/logoClinica.png" alt="Logo da clínica" class="clinic-logo" />
+        </div>
+
+        <div class="txt">
+          <span class="app-name">Bem Estar</span>
+          <small class="app-sub">Saúde</small>
+        </div>
+      </div>
+    </ion-title>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home-content">
+
+  <!-- Topo azul -->
+  <section class="top-area">
+    <p class="greet">Boa tarde,</p>
+    <h2 class="name">{{ paciente.nome }}</h2>
+    <p class="help">Como podemos ajudar você hoje?</p>
+  </section>
+
+  <!-- Botões principais -->
+  <section class="quick-actions">
+    <div class="actions-grid">
+
+      <button class="action-item" (click)="navegarPara('/tabs/agendar-consulta')">
+        <div class="icon blue">
+          <ion-icon name="medical-outline"></ion-icon>
+        </div>
+        <span>Agendar Consulta</span>
+      </button>
+
+      <button class="action-item" (click)="navegarPara('/tabs/especialidades')">
+        <div class="icon green">
+          <ion-icon name="pulse-outline"></ion-icon>
+        </div>
+        <span>Especialidades</span>
+      </button>
+
+      <button class="action-item" (click)="navegarPara('/tabs/medico')">
+        <div class="icon purple">
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+        <span>Médicos</span>
+      </button>
+
+      <button class="action-item" (click)="navegarPara('/tabs/consulta')">
+        <div class="icon orange">
+          <ion-icon name="bar-chart-outline"></ion-icon>
+        </div>
+        <span>Relatórios</span>
+      </button>
+
+    </div>
+  </section>
+
+</ion-content>

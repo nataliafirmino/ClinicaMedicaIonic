@@ -1,0 +1,51 @@
+<ion-header class="medicos-header">
+  <ion-toolbar>
+    <ion-title>Médicos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="medicos-content">
+
+  <!-- Card roxo topo -->
+  <div class="top-card">
+    <h2>Nossos Médicos</h2>
+    <p>Profissionais qualificados e experientes à sua disposição</p>
+
+    <ion-searchbar placeholder="Buscar médico ou especialidade..." [(ngModel)]="textoBusca"
+      (ionInput)="filtrarMedicos()" class="busca-bar"></ion-searchbar>
+  </div>
+
+  <h4 class="secao-titulo">Disponíveis para Consulta</h4>
+
+  <!-- lista de médicos -->
+  <div class="lista-medicos">
+    <div class="medico-card" *ngFor="let medico of medicosFiltrados">
+      <div class="medico-card-topo">
+        <img [src]="medico.foto" class="medico-foto" />
+
+        <div class="medico-info">
+          <h3>{{ medico.nome }}</h3>
+          <p>{{ medico.especialidade }}</p>
+
+          <div class="medico-avaliacao">
+            <ion-icon name="star"></ion-icon>
+            <span>{{ medico.avaliacao }}</span>
+            <small>({{ medico.avaliacoes }} avaliações)</small>
+            <span class="tempo">{{ medico.anos }} anos</span>
+          </div>
+
+          <p class="crm">CRM {{ medico.crm }}</p>
+        </div>
+
+        <div class="status">
+          <span class="disponivel">Disponível</span>
+        </div>
+      </div>
+
+      <ion-button expand="block" class="btn-agendar" (click)="agendar(medico)">
+        Agendar Consulta
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>

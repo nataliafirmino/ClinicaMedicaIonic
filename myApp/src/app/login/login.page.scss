@@ -1,0 +1,145 @@
+/* HEADER da página de Login, reaproveitando o estilo da outra tela */
+.login-header {
+  ion-toolbar {
+    --background: #1a73e8;
+    --color: #ffffff;
+    --min-height: 64px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  ion-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+/* Tela inteira branca (sem card separado) */
+ion-content.login-content {
+  --background: #ffffff;
+}
+
+/* Container ocupa a tela toda e centraliza o conteúdo */
+.login-container {
+  padding: 32px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  // centraliza verticalmente
+}
+
+/* Logo bem visível */
+.logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.logo-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 10px;
+}
+
+.clinic-logo {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 25px;
+  color: #555;
+  text-align: center;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+/* Lista de campos sem linhas */
+.form-list {
+  margin: 0;
+  padding: 0;
+}
+
+/* ====== INPUTS – tamanho fixo e cor estável ====== */
+.input-item {
+  margin-bottom: 16px;
+  --background: #f5f7fb;
+  --min-height: 70px;        /* altura fixa dos campos */
+  border-radius: 14px;
+  --border-radius: 14px;
+  --inner-border-width: 0;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  font-size: 18px;           /* base de texto maior */
+}
+
+/* texto digitado maior e legível */
+.input-item ion-input {
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+/* Ícone de mostrar/ocultar senha */
+.password-toggle {
+  font-size: 22px;
+  color: #9e9e9e;
+}
+
+/* Esqueci minha senha */
+.forgot-password {
+  text-align: right;
+  margin-top: 6px;
+  margin-bottom: 22px;
+}
+
+.link-button {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 13px;
+  color: #2f80ff;
+}
+
+/* Texto de cadastro */
+.signup-wrapper {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #757575;
+
+  a {
+    margin-left: 4px;
+    color: #2f80ff;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+/* Label dos campos (E-mail ou CPF / Senha) */
+.input-label {
+  font-size: 18px;     /* combina com o tamanho do input que você já colocou */
+  font-weight: 600;
+  color: #555;         /* cinza fixo, NÃO muda pra verde */
+  margin-bottom: 4px;
+}
+/* Forçar a label a NUNCA ficar verde, mesmo com foco/valor */
+ion-item.input-item ion-label.input-label {
+  color: #555 !important;
+}
+
+/* Quando o item está focado ou com valor, mantém a mesma cor */
+ion-item.input-item.item-has-focus ion-label.input-label,
+ion-item.input-item.item-has-value ion-label.input-label,
+ion-item.input-item.item-has-focus.item-has-value ion-label.input-label {
+  color: #555 !important;
+}
+

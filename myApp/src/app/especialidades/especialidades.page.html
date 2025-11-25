@@ -1,0 +1,46 @@
+<ion-header class="spec-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home" routerDirection="root"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Especialidades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="spec-content">
+
+  <!-- Faixa verde -->
+  <div class="hero">
+    <h2>Especialidades Médicas</h2>
+    <p>Conheça nossas especialidades e áreas de atendimento</p>
+
+    <div class="search-wrap">
+      <ion-searchbar placeholder="Buscar especialidade..."[(ngModel)]="termoBusca" (ionInput)="filtrar()"
+        class="hero-search"></ion-searchbar>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <h3 class="section-title">Todas as Especialidades</h3>
+
+    <div class="spec-list">
+      <button class="spec-card" *ngFor="let esp of especialidadesFiltradas" (click)="abrir(esp)">
+        <div class="icon-badge" [ngClass]="esp.tipo">
+          <ion-icon [name]="
+              esp.tipo === 'cardiologia'  ? 'heart-outline' :
+              esp.tipo === 'neurologia'   ? 'scan-circle-outline' :
+              esp.tipo === 'oftalmologia' ? 'eye-outline' :
+              esp.tipo === 'ortopedia'    ? 'bandage-outline' :
+              esp.tipo === 'pediatria'    ? 'medkit-outline' :
+              'medical-outline'
+            "></ion-icon>
+        </div>
+
+        <div class="spec-text">
+          <h4>{{ esp.nome }}</h4>
+          <p>{{ esp.descricao }}</p>
+        </div>
+      </button>
+    </div>
+  </div>
+</ion-content>

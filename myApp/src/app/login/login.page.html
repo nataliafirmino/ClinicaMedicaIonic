@@ -1,0 +1,56 @@
+<ion-header class="login-header">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login-content">
+
+  <div class="login-container">
+
+    <!-- Logo + nome da clínica -->
+    <div class="logo-wrapper">
+      <div class="logo-circle">
+        <img src="assets/img/logoClinica.png" alt="Logo da clínica" class="clinic-logo" />
+      </div>
+      <p>
+        Bem Estar <span>Saúde</span>
+      </p>
+    </div>
+
+    <!-- Campos -->
+    <ion-list>
+      <!-- E-mail-->
+      <ion-item>
+        <ion-input label="E-mail" label-placement="stacked" placeholder="Digite seu e-mail"
+          [(ngModel)]="email">
+        </ion-input>
+      </ion-item>
+
+      <!-- Senha + ícone de mostrar/ocultar -->
+      <ion-item>
+        <ion-input label="Senha" label-placement="stacked" [type]="showPassword ? 'text' : 'password'"
+          placeholder="Digite sua senha" [(ngModel)]="senha">
+        </ion-input>
+
+        <ion-icon slot="end" class="password-toggle" [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"
+          (click)="togglePassword()">
+        </ion-icon>
+      </ion-item>
+
+    </ion-list>
+
+    <!-- Botão Entrar -->
+    <ion-button expand="block" shape="round" class="login-btn" (click)="onLogin()">
+      Entrar
+    </ion-button>
+
+    <!-- Criar conta -->
+    <div class="signup-wrapper">
+      <span>Não possui conta?</span>
+      <a routerLink="/cadastro">Criar conta</a>
+    </div>
+
+  </div>
+
+</ion-content>
