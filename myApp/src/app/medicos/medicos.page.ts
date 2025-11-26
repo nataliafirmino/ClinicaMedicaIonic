@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-medico',
-  templateUrl: './medico.page.html',
-  styleUrls: ['./medico.page.scss'],
+  selector: 'app-medicos',
+  templateUrl: './medicos.page.html',
+  styleUrls: ['./medicos.page.scss'],
   standalone: false,
 })
-export class MedicoPage implements OnInit {
+export class MedicosPage implements OnInit {
 
   textoBusca = '';
   cor = '';

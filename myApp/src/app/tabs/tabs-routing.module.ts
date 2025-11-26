@@ -20,10 +20,10 @@ const routes: Routes = [
             .then(m => m.ConsultaPageModule),
       },
       {
-        path: 'medico',
+        path: 'medicos',
         loadChildren: () =>
-          import('../medico/medico.module')
-            .then(m => m.MedicoPageModule),
+          import('../medicos/medicos.module')
+            .then(m => m.MedicosPageModule),
       },
       {
         path: 'paciente',
