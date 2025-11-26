@@ -8,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PacientePage implements OnInit {
 
-  constructor() { }
+  dadosUsuario = {
+    nome: 'Maria Santos Silva',
+    dataNascimento: '15/03/1985',
+    email: 'maria.santos@email.com',
+    telefone: '(11) 98765-4321',
+    endereco: 'Rua das Flores, 123 - São Paulo, SP'
+  };
+
+  pacienteDesde = '2020';
+
+  constructor() {}
 
   ngOnInit() {
+    // depois você pode buscar essas infos de API ou storage
   }
 
+  sairDaConta() {
+    // lógica de logout
+    console.log('Sair da conta clicado');
+  }
 }

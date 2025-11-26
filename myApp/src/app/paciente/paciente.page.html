@@ -1,13 +1,123 @@
-<ion-header [translucent]="true">
+<ion-header class="perfil-header">
   <ion-toolbar>
-    <ion-title>paciente</ion-title>
+
+    <!-- LINHA DE CIMA: título + ícones -->
+    <div class="perfil-top-row">
+      <ion-title>Meu Perfil</ion-title>
+
+      <div class="perfil-icons">
+        <ion-icon name="moon-outline"></ion-icon>
+        <ion-icon name="notifications-outline"></ion-icon>
+      </div>
+    </div>
+
+    <!-- BLOCO DO USUÁRIO -->
+    <div class="perfil-user">
+      <div class="avatar-wrapper">
+        <!-- troca a imagem pelo caminho que você tiver no projeto -->
+        <img src="assets/img/fotoPerfil.jpg" alt="Foto do paciente" />
+        <div class="avatar-badge">
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+      </div>
+
+      <div class="perfil-user-text">
+        <h2>{{ dadosUsuario.nome }}</h2>
+        <p>Paciente desde {{ pacienteDesde }}</p>
+      </div>
+    </div>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">paciente</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="perfil-content">
+
+  <div class="perfil-container">
+
+    <!-- TÍTULO DA SEÇÃO -->
+    <h2 class="section-title">Informações Pessoais</h2>
+
+    <!-- CARD GERAL DAS INFORMAÇÕES -->
+    <div class="info-card">
+
+      <!-- Nome Completo -->
+      <div class="info-item">
+        <div class="info-icon">
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+
+        <div class="info-text">
+          <span class="info-label">Nome Completo</span>
+          <span class="info-value">{{ dadosUsuario.nome }}</span>
+        </div>
+
+        <ion-icon name="chevron-forward-outline" class="info-chevron"></ion-icon>
+      </div>
+
+      <!-- Data de Nascimento -->
+      <div class="info-item">
+        <div class="info-icon">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </div>
+
+        <div class="info-text">
+          <span class="info-label">Data de Nascimento</span>
+          <span class="info-value">{{ dadosUsuario.dataNascimento }}</span>
+        </div>
+
+        <ion-icon name="chevron-forward-outline" class="info-chevron"></ion-icon>
+      </div>
+
+      <!-- E-mail -->
+      <div class="info-item">
+        <div class="info-icon">
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+
+        <div class="info-text">
+          <span class="info-label">E-mail</span>
+          <span class="info-value">{{ dadosUsuario.email }}</span>
+        </div>
+
+        <ion-icon name="chevron-forward-outline" class="info-chevron"></ion-icon>
+      </div>
+
+      <!-- Telefone -->
+      <div class="info-item">
+        <div class="info-icon">
+          <ion-icon name="call-outline"></ion-icon>
+        </div>
+
+        <div class="info-text">
+          <span class="info-label">Telefone</span>
+          <span class="info-value">{{ dadosUsuario.telefone }}</span>
+        </div>
+
+        <ion-icon name="chevron-forward-outline" class="info-chevron"></ion-icon>
+      </div>
+
+      <!-- Endereço -->
+      <div class="info-item">
+        <div class="info-icon">
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+
+        <div class="info-text">
+          <span class="info-label">Endereço</span>
+          <span class="info-value">{{ dadosUsuario.endereco }}</span>
+        </div>
+
+        <ion-icon name="chevron-forward-outline" class="info-chevron"></ion-icon>
+      </div>
+
+    </div>
+
+    <!-- BOTÃO SAIR DA CONTA -->
+    <button class="btn-sair" (click)="sairDaConta()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <span>Sair da Conta</span>
+    </button>
+
+  </div>
+
 </ion-content>
