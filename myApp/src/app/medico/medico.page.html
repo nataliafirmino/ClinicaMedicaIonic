@@ -27,22 +27,17 @@
           <h3>{{ medico.nome }}</h3>
           <p>{{ medico.especialidade }}</p>
 
-          <div class="medico-avaliacao">
-            <ion-icon name="star"></ion-icon>
-            <span>{{ medico.avaliacao }}</span>
-            <small>({{ medico.avaliacoes }} avaliações)</small>
-            <span class="tempo">{{ medico.anos }} anos</span>
-          </div>
-
           <p class="crm">CRM {{ medico.crm }}</p>
         </div>
 
         <div class="status">
-          <span class="disponivel">Disponível</span>
+          <span class="badge-status {{ estiloStatus(medico.status) }}">
+            {{ medico.status }}
+          </span>
         </div>
       </div>
 
-      <ion-button expand="block" class="btn-agendar" (click)="agendar(medico)">
+      <ion-button expand="block" class="btn-agendar" routerLink="/tabs/agendar-consulta" >
         Agendar Consulta
       </ion-button>
     </div>

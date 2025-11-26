@@ -9,34 +9,29 @@ import { Component, OnInit } from '@angular/core';
 export class MedicoPage implements OnInit {
 
   textoBusca = '';
+  cor = '';
 
   medicos: any[] = [
     {
       nome: 'Dr. João Silva',
       especialidade: 'Cardiologia',
-      avaliacao: 4.9,
-      avaliacoes: 127,
-      anos: 15,
       crm: '1245-SP',
-      foto: 'assets/img/medico1.jpg'
+      foto: 'assets/img/medico1.jpg',
+      status: "Disponível"
     },
     {
       nome: 'Dra. Ana Costa',
       especialidade: 'Cardiologia',
-      avaliacao: 4.8,
-      avaliacoes: 95,
-      anos: 12,
       crm: '2345-SP',
-      foto: 'assets/img/medico2.jpg'
+      foto: 'assets/img/fotoPerfil.jpg',
+      status: "Disponível"
     },
     {
       nome: 'Dr. Pedro Almeida',
       especialidade: 'Ortopedia',
-      avaliacao: 4.7,
-      avaliacoes: 80,
-      anos: 10,
       crm: '3456-SP',
-      foto: 'assets/img/medico3.jpg'
+      foto: 'assets/img/medico3.png',
+      status: "Indisponível"
     }
   ];
 
@@ -60,7 +55,12 @@ export class MedicoPage implements OnInit {
     );
   }
 
-  agendar(medico: any) {
-    console.log('Agendar consulta com:', medico.nome);
+  estiloStatus(status: string): string {
+  if (status === 'Indisponível') {
+    return 'danger';
+  } else {
+    return 'success';
   }
+}
+
 }

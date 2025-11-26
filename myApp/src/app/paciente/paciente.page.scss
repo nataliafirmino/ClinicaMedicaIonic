@@ -1,4 +1,3 @@
-/* ================= HEADER AZUL ================= */
 .perfil-header {
   ion-toolbar {
     --background: linear-gradient(180deg, #1e73ff 0%, #1a5fe0 100%);
@@ -11,6 +10,7 @@
     border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+    
   }
 
   ion-title {
@@ -20,7 +20,6 @@
   }
 }
 
-/* linha com "Meu Perfil" + ícones */
 .perfil-top-row {
   display: flex;
   align-items: center;
@@ -38,7 +37,6 @@
   }
 }
 
-/* bloco com foto + nome + texto */
 .perfil-user {
   display: flex;
   align-items: center;
@@ -62,7 +60,6 @@
   }
 }
 
-/* círculo pequeno embaixo da foto */
 .avatar-badge {
   position: absolute;
   right: -2px;
@@ -99,7 +96,6 @@
   }
 }
 
-/* ================= CONTEÚDO ================= */
 
 .perfil-content {
   --background: #f2f4f8;
@@ -109,7 +105,6 @@
   padding: 16px 16px 24px;
 }
 
-/* Título "Informações Pessoais" */
 .section-title {
   font-size: 1rem;
   font-weight: 600;
@@ -117,7 +112,6 @@
   margin: 10px 4px 10px;
 }
 
-/* Card branco com sombra */
 .info-card {
   background: #ffffff;
   border-radius: 16px;
@@ -125,7 +119,6 @@
   padding: 4px 0;
 }
 
-/* Cada linha (nome, data, email...) */
 .info-item {
   display: flex;
   align-items: center;
@@ -137,7 +130,6 @@
   }
 }
 
-/* Bolinha do ícone */
 .info-icon {
   width: 36px;
   height: 36px;
@@ -153,7 +145,6 @@
   }
 }
 
-/* Textos da linha */
 .info-text {
   display: flex;
   flex-direction: column;
@@ -172,13 +163,11 @@
   font-weight: 500;
 }
 
-/* Setinha da direita */
 .info-chevron {
   font-size: 18px;
   color: #c2c6d0;
 }
 
-/* Botão "Sair da Conta" */
 .btn-sair {
   margin-top: 18px;
   width: 100%;

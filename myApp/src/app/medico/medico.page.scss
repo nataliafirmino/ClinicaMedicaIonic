@@ -24,7 +24,7 @@
 
 /* Card roxo topo */
 .top-card {
-  margin: 12px 14px 10px;
+  margin: 8px 14px 10px;
   padding: 14px 14px 12px;
   border-radius: 14px;
   background: linear-gradient(180deg, #7a2cff 0%, #5a22d9 100%);
@@ -54,7 +54,7 @@
   }
 }
 
-/* stats */
+/* (opcional) stats – hoje está sem uso no HTML, pode remover se quiser */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -169,20 +169,34 @@
     }
   }
 
+  /* container do status */
   .status {
     position: absolute;
     right: 0;
     top: 0;
+  }
 
-    .disponivel {
-      font-size: 0.62rem;
-      font-weight: 700;
-      color: #0e9f6e;
-      background: #e7fbf3;
-      padding: 3px 8px;
-      border-radius: 8px;
-      border: 1px solid #bdf3df;
-    }
+  /* badge base */
+  .badge-status {
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+  }
+
+  /* quando estiloStatus() retorna 'success' */
+  .badge-status.success {
+    color: #0e9f6e;
+    background: #e7fbf3;
+    border-color: #bdf3df;
+  }
+
+  /* quando estiloStatus() retorna 'danger' */
+  .badge-status.danger {
+    color: #d12d2d;
+    background: #ffd6d6;
+    border-color: #f5b5b5;
   }
 
   /* botão roxo */

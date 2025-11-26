@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-paciente',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./paciente.page.scss'],
   standalone: false,
 })
-export class PacientePage implements OnInit {
+export class PacientePage  {
 
   dadosUsuario = {
     nome: 'Maria Santos Silva',
@@ -16,16 +16,9 @@ export class PacientePage implements OnInit {
     endereco: 'Rua das Flores, 123 - São Paulo, SP'
   };
 
-  pacienteDesde = '2020';
-
   constructor() {}
 
-  ngOnInit() {
-    // depois você pode buscar essas infos de API ou storage
-  }
-
   sairDaConta() {
-    // lógica de logout
-    console.log('Sair da conta clicado');
+    console.log('Sair da conta');
   }
 }
