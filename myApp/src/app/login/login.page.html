@@ -29,19 +29,19 @@
 
       <!-- Senha + ícone de mostrar/ocultar -->
       <ion-item>
-        <ion-input label="Senha" label-placement="stacked" [type]="showPassword ? 'text' : 'password'"
+        <ion-input label="Senha" label-placement="stacked" [type]="mostrarSenha ? 'text' : 'password'"
           placeholder="Digite sua senha" [(ngModel)]="senha">
         </ion-input>
 
-        <ion-icon slot="end" class="password-toggle" [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"
-          (click)="togglePassword()">
+        <ion-icon slot="end" class="password-toggle" [name]="mostrarSenha ? 'eye-off-outline' : 'eye-outline'"
+          (click)="visualizarSenha()">
         </ion-icon>
       </ion-item>
 
     </ion-list>
 
     <!-- Botão Entrar -->
-    <ion-button expand="block" shape="round" class="login-btn" (click)="onLogin()">
+    <ion-button expand="block" shape="round" class="login-btn">
       Entrar
     </ion-button>
 

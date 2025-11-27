@@ -1,7 +1,8 @@
 <ion-header class="page-header">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs/consulta" routerDirection="root"></ion-back-button>
+      <ion-back-button defaultHref="/tabs/consulta">
+      </ion-back-button>
     </ion-buttons>
     <ion-title>Agendar Consulta</ion-title>
   </ion-toolbar>
@@ -36,7 +37,7 @@
 
         <ion-item class="field__item" lines="none">
           <ion-select interface="popover" placeholder="Selecione" [(ngModel)]="consultaPara"
-            (ionChange)="onConsultaParaChange()">
+            (ionChange)="buscarConsulta()">
             <ion-select-option value="mim">Para mim</ion-select-option>
             <ion-select-option value="outro">Outra pessoa</ion-select-option>
           </ion-select>
@@ -53,7 +54,8 @@
           </label>
 
           <ion-item class="field__item" lines="none">
-            <ion-input placeholder="Digite o nome completo" [(ngModel)]="paciente.nome" name="nomePaciente"></ion-input>
+            <ion-input placeholder="Digite o nome completo" [(ngModel)]="paciente.nome" name="nomePaciente">
+            </ion-input>
           </ion-item>
         </section>
 
@@ -64,12 +66,12 @@
           </label>
 
           <ion-item class="field__item" lines="none">
-            <ion-input placeholder="000.000.000-00" inputmode="numeric" [(ngModel)]="paciente.cpf"
-              name="cpfPaciente"></ion-input>
+            <ion-input placeholder="000.000.000-00" inputmode="numeric" [(ngModel)]="paciente.cpf" name="cpfPaciente"
+              (ionInput)="maskCPF($event)">
+            </ion-input>
           </ion-item>
         </section>
 
-        <!-- Data nascimento (Opção A) -->
         <section class="field">
           <label class="field__label">
             <ion-icon name="calendar-outline"></ion-icon>
@@ -77,9 +79,12 @@
           </label>
 
           <ion-item class="field__item" lines="none">
-            <ion-input type="date" [(ngModel)]="paciente.dataNascimento" name="dataNascimentoPaciente"></ion-input>
+            <ion-input placeholder="DD/MM/AAAA" [(ngModel)]="paciente.dataNascimento" name="dataNascimentoPaciente"
+              (ionInput)="maskDataNascimento($event)">
+            </ion-input>
           </ion-item>
         </section>
+
 
         <section class="field">
           <label class="field__label">
@@ -107,10 +112,10 @@
         </label>
 
         <ion-item class="field__item" lines="none">
-          <ion-select interface="popover" placeholder="Selecione a especialidade" [(ngModel)]="especialidadeId"
-            (ionChange)="onEspecialidadeChange()" name="especialidade">
-            <ion-select-option *ngFor="let esp of especialidades" [value]="esp.id">
-              {{ esp.nome }}
+          <ion-select interface="popover" placeholder="Selecione a especialidade" [(ngModel)]="especialidadeSelecionada"
+            (ionChange)="buscarEspecialidade()" name="especialidade">
+            <ion-select-option *ngFor="let esp of especialidades" [value]="esp">
+              {{ esp }}
             </ion-select-option>
           </ion-select>
         </ion-item>
@@ -124,9 +129,9 @@
         </label>
 
         <ion-item class="field__item" lines="none">
-          <ion-select interface="popover" placeholder="Selecione o médico" [(ngModel)]="medicoId" name="medico"
+          <ion-select interface="popover" placeholder="Selecione o médico" [(ngModel)]="medicoSelecionado" name="medico"
             [disabled]="medicosFiltrados.length === 0">
-            <ion-select-option *ngFor="let med of medicosFiltrados" [value]="med.id">
+            <ion-select-option *ngFor="let med of medicosFiltrados" [value]="med.nome">
               {{ med.nome }}
             </ion-select-option>
           </ion-select>
@@ -141,12 +146,31 @@
         </label>
 
         <ion-item class="field__item" lines="none">
-          <ion-input type="date" [(ngModel)]="dataConsulta" name="dataConsulta"></ion-input>
+          <ion-input type="date" [(ngModel)]="dataConsulta" name="dataConsulta">
+          </ion-input>
+        </ion-item>
+      </section>
+
+      <!-- Horário da consulta (ion-select) -->
+      <section class="field">
+        <label class="field__label">
+          <ion-icon name="time-outline"></ion-icon>
+          Horário
+        </label>
+
+        <ion-item class="field__item" lines="none">
+          <ion-select interface="popover" placeholder="Selecione o horário" [(ngModel)]="horarioConsulta"
+            name="horarioConsulta">
+            <ion-select-option *ngFor="let h of horariosDisponiveis" [value]="h">
+              {{ h }}
+            </ion-select-option>
+          </ion-select>
         </ion-item>
       </section>
 
       <!-- Botão -->
-      <ion-button class="confirm-btn" expand="block" shape="round" [disabled]="!formValido" (click)="confirmarAgendamento()">
+      <ion-button class="confirm-btn" expand="block" shape="round" [disabled]="!formularioValido"
+        (click)="confirmarAgendamento()">
         Agendar
       </ion-button>
 

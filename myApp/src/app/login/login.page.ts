@@ -9,17 +9,17 @@ import { Component } from '@angular/core';
 export class LoginPage {
   email = '';
   senha = '';
-  showPassword = false;
+  mostrarSenha = false;
 
-  togglePassword() {
-    this.showPassword = !this.showPassword;
+  visualizarSenha() {
+    this.mostrarSenha = !this.mostrarSenha;
   }
 
-  onLogin() {
-    // lógica de login aqui
+  login(){
+    //lógica de entrar com os dados salvos
   }
 
-  onForgotPassword() {
-    // navegar para tela de recuperação de senha ou abrir modal
+  logout(){
+    //logica de sair
   }
 }

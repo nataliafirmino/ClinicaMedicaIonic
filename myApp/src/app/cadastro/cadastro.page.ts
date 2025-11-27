@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,10 +8,7 @@ import { Router } from '@angular/router';
 })
 export class CadastroPage {
 
-  constructor(
-    // se ainda não for usar navegação, pode remover o Router daqui e do import
-    private router: Router
-  ) { }
+  constructor() { }
 
   nome?: string;
   cpf?: string;
@@ -28,7 +24,6 @@ export class CadastroPage {
   estado?: string;
   cep?: string;
 
-  // ========= MÁSCARA CPF 000.000.000-00 =========
   maskCPF(event: any) {
     let value: string = event.detail.value || '';
 
@@ -51,7 +46,6 @@ export class CadastroPage {
     this.cpf = value;
   }
 
-  // ========= MÁSCARA CEP 00000-000 =========
   maskCEP(event: any) {
     let value: string = event.detail.value || '';
 
@@ -68,7 +62,6 @@ export class CadastroPage {
     this.cep = value;
   }
 
-  // ========= MÁSCARA DATA DD/MM/AAAA =========
   maskDataNascimento(event: any) {
     let value: string = event.detail.value || '';
 

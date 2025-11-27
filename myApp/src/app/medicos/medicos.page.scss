@@ -1,30 +1,27 @@
-/* Fundo geral */
 .medicos-content {
   --background: #f2f4f8;
 }
 
-/* Header azul */
 .medicos-header {
   ion-toolbar {
     --background: linear-gradient(180deg, #156cff 0%, #0f57e6 100%);
     --color: #fff;
-    --min-height: 64px;
-    padding: 6px 10px;
+    --min-height: 78px;
+    padding: 10px 12px;
   }
 
   ion-title {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
-  ion-button {
+  ion-back-button {
     color: #fff;
   }
 }
 
-/* Card roxo topo */
 .top-card {
-  margin: 8px 14px 10px;
+  margin: 10px 14px 10px;
   padding: 14px 14px 12px;
   border-radius: 14px;
   background: linear-gradient(180deg, #7a2cff 0%, #5a22d9 100%);
@@ -54,51 +51,22 @@
   }
 }
 
-/* (opcional) stats – hoje está sem uso no HTML, pode remover se quiser */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 0 14px;
-  margin-bottom: 8px;
-
-  .stat-item {
-    background: #fff;
-    border-radius: 12px;
-    padding: 10px 6px;
-    text-align: center;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-
-    h3 {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: #7a2cff;
-      margin: 0;
-    }
-
-    span {
-      font-size: 0.72rem;
-      color: #666;
-      display: block;
-      margin-top: 2px;
-    }
+.medicos-content {
+  ion-item-divider {
+    --background: transparent;
+    --color: #333;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 4px 16px 2px;
+    margin-top: 4px;
+    margin-bottom: 2px;
   }
 }
 
-.secao-titulo {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #333;
-  padding: 6px 16px 4px;
-  margin: 0;
-}
-
-/* lista */
 .lista-medicos {
-  padding: 6px 12px 16px;
+  padding: 4px 12px 16px;
 }
 
-/* card medico */
 .medico-card {
   background: #fff;
   border-radius: 14px;
@@ -124,45 +92,20 @@
   .medico-info {
     flex: 1;
 
-    h3 {
-      font-size: 0.88rem;
+    .medico-nome h3 {
+      font-size: 0.9rem;
       font-weight: 800;
       margin: 0;
       color: #222;
     }
 
-    p {
-      font-size: 0.74rem;
+    .medico-especialidade p {
+      font-size: 0.75rem;
       color: #666;
       margin: 1px 0 4px;
     }
 
-    .medico-avaliacao {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.7rem;
-      color: #444;
-      margin-bottom: 3px;
-
-      ion-icon {
-        font-size: 0.8rem;
-        color: #f5b400;
-      }
-
-      small {
-        color: #888;
-        font-size: 0.68rem;
-      }
-
-      .tempo {
-        margin-left: 6px;
-        color: #888;
-        font-size: 0.68rem;
-      }
-    }
-
-    .crm {
+    .crm p {
       font-size: 0.68rem;
       color: #888;
       margin: 0;
@@ -176,30 +119,17 @@
     top: 0;
   }
 
-  /* badge base */
+  /* badge base (ion-badge) */
   .badge-status {
     font-size: 0.62rem;
     font-weight: 700;
     padding: 3px 8px;
     border-radius: 8px;
     border: 1px solid transparent;
+    text-transform: none;
   }
 
-  /* quando estiloStatus() retorna 'success' */
-  .badge-status.success {
-    color: #0e9f6e;
-    background: #e7fbf3;
-    border-color: #bdf3df;
-  }
-
-  /* quando estiloStatus() retorna 'danger' */
-  .badge-status.danger {
-    color: #d12d2d;
-    background: #ffd6d6;
-    border-color: #f5b5b5;
-  }
-
-  /* botão roxo */
+  /* botão roxo “Agendar Consulta” */
   .btn-agendar {
     margin-top: 8px;
     height: 34px;
@@ -209,5 +139,12 @@
     --background-hover: #6a22ea;
     --border-radius: 10px;
     text-transform: none;
+  }
+
+  /* visual quando o botão estiver desabilitado (médico indisponível) */
+  .btn-agendar[disabled] {
+    --background: #cccccc;
+    --background-hover: #cccccc;
+    opacity: 0.85;
   }
 }

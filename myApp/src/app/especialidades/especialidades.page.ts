@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { lista_especialidades } from './especialidades-dados';
 
 @Component({
   selector: 'app-especialidades',
@@ -6,42 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./especialidades.page.scss'],
   standalone: false,
 })
-export class EspecialidadesPage implements OnInit {
+export class EspecialidadesPage  {
 
   especialidades: any[] = [];
   especialidadesFiltradas: any[] = [];
 
   termoBusca = '';
 
-  ngOnInit() {
-    this.especialidades = [
-      {
-        nome: 'Cardiologia',
-        descricao: 'Cuidados com o coração e sistema circulatório',
-        tipo: 'cardiologia'
-      },
-      {
-        nome: 'Neurologia',
-        descricao: 'Tratamento do sistema nervoso e cérebro',
-        tipo: 'neurologia'
-      },
-      {
-        nome: 'Oftalmologia',
-        descricao: 'Saúde dos olhos e visão',
-        tipo: 'oftalmologia'
-      },
-      {
-        nome: 'Ortopedia',
-        descricao: 'Ossos, articulações e músculos',
-        tipo: 'ortopedia'
-      },
-      {
-        nome: 'Pediatria',
-        descricao: 'Cuidados médicos para crianças e adolescentes',
-        tipo: 'pediatria'
-      },
-    ];
-
+  constructor() {
+    this.especialidades = lista_especialidades;
     this.especialidadesFiltradas = this.especialidades;
   }
 
